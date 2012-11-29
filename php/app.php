@@ -438,7 +438,7 @@ if (!$action) {
   if ($action == 'embed') $embed = true;
   if ($revision == 'latest') {
     $latest_revision = getMaxRevision($code_id);
-    header('Location: /' . $code_id . '/' . $latest_revision . '/edit');
+    header('Location: ' . ROOT . '/' . $code_id . '/' . $latest_revision . '/edit');
     $edit_mode = false;
   }
 } else if ($action == 'save' || $action == 'clone') {
@@ -574,7 +574,7 @@ if (!$action) {
     // find the latest revision and redirect to that.
     $code_id = $subaction;
     $latest_revision = getMaxRevision($code_id);
-    header('Location: /' . $code_id . '/' . $latest_revision);
+    header('Location: ' . ROOT . '/' . $code_id . '/' . $latest_revision);
     $edit_mode = false;
   }
   // gist are formed as jsbin.com/gist/1234 - which land on this condition, so we need to jump out, just in case
